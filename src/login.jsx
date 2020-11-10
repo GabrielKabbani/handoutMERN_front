@@ -20,7 +20,7 @@ export default class Login extends Component{
 
         if (this.state.redirectToReferrer===true){
             return(
-                <Redirect to='/usuarios'/>
+                <Redirect to='https://carteira-alphavantage.herokuapp.com/usuarios'/>
             )
         }
         

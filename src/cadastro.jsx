@@ -18,7 +18,7 @@ export default class Cadastro extends Component{
         
         if (this.state.redirectToReferrer===true){
             return(
-                <Redirect to='/'/>
+                <Redirect to='https://carteira-alphavantage.herokuapp.com/'/>
             )
         }
 
