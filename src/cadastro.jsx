@@ -40,14 +40,14 @@ export default class Cadastro extends Component{
 
  
                 </ul>
-                <a href='http://localhost:3001/'> Voltar</a>
+                <a href='https://carteira-alphavantage.herokuapp.com/'> Voltar</a>
             </div>
         )
     }
 
 
     cadastro(){
-        axios.post('http://localhost:3000/users', this.state.usuario).then(resp=>{
+        axios.post('https://carteira-alphavantage.herokuapp.com/users', this.state.usuario).then(resp=>{
             if(Math.floor(resp.status/100)===2){
                 this.setState((state) => {
                     return {
