@@ -7,7 +7,7 @@ export default class Usuarios extends Component{
         super(props)
         console.log("LOCAL STORAGE NOME NO USUARIOS: ", localStorage.getItem('usuario'))
         var user = localStorage.getItem('usuario')
-        var link = ("http://localhost:3000/user/" + user)
+        var link = ("https://projeto-alphavantage.herokuapp.com/user/" + user)
         console.log("LINK: ",link)
         this.state = {lista: [{nome: 'teste', senha: 'teste', acoes: [{ticker: 'teste', preco: '1', qtd: '1', lucro: '1'}]}],usuario: {nome: user, senha: '', acoes: [{ticker: 'teste', preco: '1', qtd: '1', lucro: '1'}]}, adiciona:false}
         this.handleChange= this.handleChange.bind(this)
@@ -46,7 +46,7 @@ export default class Usuarios extends Component{
                         <label>    Quantidade: </label>
                         <input name="qtd"/>
                         <button onClick={() => this.handleSubmit([(""+document.getElementsByName("ticker")[0].value),(""+document.getElementsByName("preco")[0].value),(""+document.getElementsByName("qtd")[0].value)])}>Inserir</button>
-                    <a href='http://localhost:3001/usuarios'> Voltar</a>
+                    <a href='https://carteira-alphavantage.herokuapp.com/usuarios'> Voltar</a>
                 </div>
                 
             )
@@ -74,7 +74,7 @@ export default class Usuarios extends Component{
                 <header><h1>Carteira de {this.state.lista[0].nome}:</h1></header> 
                 <ul> {liUsuario} </ul>
                 <button onClick={this.add}>Adicionar ação</button>
-                <a href='http://localhost:3001/'> Logout</a>
+                <a href='https://carteira-alphavantage.herokuapp.com/'> Logout</a>
             </div>
         )
     }}
@@ -117,7 +117,7 @@ export default class Usuarios extends Component{
             var acao = {ticker: tick, preco: price, qtd: vol}
             state.lista[0].acoes.push(acao)
             state.adiciona=false
-            var link = 'http://localhost:3000/users/'+this.state.usuario.nome
+            var link = 'https://projeto-alphavantage.herokuapp.com/users/'+this.state.usuario.nome
             console.log("LINK PUT", link)
             axios.put(link, state.lista)
             return state

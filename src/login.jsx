@@ -53,7 +53,7 @@ export default class Login extends Component{
     login(){
         console.log("entrou no login")
         console.log(this.state.usuario)
-        axios.post('https://carteira-alphavantage.herokuapp.com/user', this.state.usuario).then(resp=>{
+        axios.post('https://projeto-alphavantage.herokuapp.com/user', this.state.usuario).then(resp=>{
             if(Math.floor(resp.status/100)===2 && resp.data.worked === true){
                 console.log("RESP:",resp)
                 this.setState((state) => {

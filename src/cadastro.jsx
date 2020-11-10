@@ -47,7 +47,7 @@ export default class Cadastro extends Component{
 
 
     cadastro(){
-        axios.post('https://carteira-alphavantage.herokuapp.com/users', this.state.usuario).then(resp=>{
+        axios.post('https://projeto-alphavantage.herokuapp.com/users', this.state.usuario).then(resp=>{
             if(Math.floor(resp.status/100)===2){
                 this.setState((state) => {
                     return {
